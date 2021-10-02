@@ -2,6 +2,7 @@
  * main - Prints hex digits
  * Return: 0
  */
+#include<stdio.h>
 
 int main(void)
 
