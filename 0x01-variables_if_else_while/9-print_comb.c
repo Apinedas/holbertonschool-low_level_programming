@@ -1,6 +1,6 @@
 /**
- * main - Prints hex numbers
- * Returns: 0
+ * main - Prints digits separated by commas
+ * Return: 0
  */
 
 #include <stdio.h>

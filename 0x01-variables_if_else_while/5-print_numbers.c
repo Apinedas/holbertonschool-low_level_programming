@@ -1,6 +1,6 @@
 /**
  * main - Prints digits
- * Returns: 0
+ * Return: 0
  */
 
 #include <stdio.h>
