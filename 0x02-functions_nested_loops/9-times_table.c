@@ -1,9 +1,10 @@
+#include "main.h"
+#include <stdlib.h>
+
 /**
  * double_space_comma - prints a comma followed by two spaces
  * Return: Always 0
  */
-
-#include "main.h"
 
 void double_space_comma(void)
 {
@@ -21,6 +22,47 @@ void single_space_comma(void)
 {
 	_putchar(',');
 	_putchar(' ');
+}
+
+/**
+ *print_numbers - prints number n (from -999 to 999)
+ *@n: number to print
+ *return: always 0
+ */
+
+void print_numbers(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+	}
+	if (n >= 100 || n <= -100)
+	{
+		int a;
+		int b;
+		int c;
+
+		a = abs(n) / 100;
+		b = (abs(n) % 100) / 10;
+		c = abs(n) % 10;
+		_putchar(a + '0');
+		_putchar(b + '0');
+		_putchar(c + '0');
+	}
+	else if (n >= 10 || n <= -10)
+	{
+		int a;
+		int b;
+
+		a = abs(n) / 10;
+		b = abs(n) % 10;
+		_putchar(a + '0');
+		_putchar(b + '0');
+	}
+	else
+	{
+		_putchar(abs(n) + '0');
+	}
 }
 
 /**
@@ -44,20 +86,18 @@ void times_table(void)
 			if (c < 10)
 			{
 				_putchar(c + '0');
-				if (b != 9)
+				if (b != 9 && ((b + 1) * a) < 10)
 				{
 					double_space_comma();
+				}
+				else if (b != 9 && ((b + 1) * a) > 10)
+				{
+					single_space_comma();
 				}
 			}
 			else
 			{
-				int d;
-				int e;
-
-				d = c / 10;
-				e = c % 10;
-				_putchar(d + '0');
-				_putchar(e + '0');
+				print_numbers(c);
 				if (b != 9)
 				{
 					single_space_comma();
