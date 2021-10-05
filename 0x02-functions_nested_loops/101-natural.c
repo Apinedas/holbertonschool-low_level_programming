@@ -5,11 +5,12 @@
 
 #include <stdio.h>
 
-void main(void)
+int main(void)
 {
 	int sum, times;
+
 	sum = 0;
-	for(times = 1; times < 1024; times++)
+	for (times = 1; times < 1024; times++)
 	{
 		if ((times % 3) == 0 || (times % 5) == 0)
 		{
@@ -17,4 +18,5 @@ void main(void)
 		}
 	}
 	printf("%d\n", sum);
+	return (0);
 }
