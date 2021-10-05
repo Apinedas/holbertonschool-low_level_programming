@@ -86,17 +86,11 @@ void print_numbers(int n)
 
 void print_times_table(int n)
 {
-	if (n > 15 || n < 0)
+	if (n > 0 && n < 15)
 	{
-	}
-	else
-	{
-		int a;
-		int b;
-		int c;
+		int a, b, c;
 
-		a = 0;
-		b = 0;
+		a = b = 0;
 		while (a <= n)
 		{
 			while (b <= n)
@@ -106,25 +100,17 @@ void print_times_table(int n)
 				{
 					_putchar(c + '0');
 					if (b != n && ((b + 1) * a) < 10)
-					{
 						triple_space_comma();
-					}
 					else if (b != n && ((b + 1) * a) >= 10)
-					{
 						double_space_comma();
-					}
 				}
 				else if (c < 100)
 				{
 					print_numbers(c);
 					if (b != n && ((b + 1) * a) < 100)
-					{
 						double_space_comma();
-					}
 					else if (b != n)
-					{
 						single_space_comma();
-					}
 				}
 				else if (b != n)
 				{
@@ -132,9 +118,7 @@ void print_times_table(int n)
 					single_space_comma();
 				}
 				else
-				{
 					print_numbers(c);
-				}
 				b++;
 			}
 			_putchar('\n');
