@@ -13,13 +13,16 @@ int main(void)
 
 	num1 = 1;
 	num2 = 2;
-	printf("%ld\n%ld\n", num1, num2);
+	printf("%ld, %ld, ", num1, num2);
 	for (pos = 1; pos <= 48; pos++)
 	{
 		fib = num1 + num2;
 		num1 = num2;
 		num2 = fib;
-		printf("%ld\n", fib);
+		if (pos != 48)
+			printf("%ld, ", fib);
+		else
+			printf("%ld\n", fib);
 	}
 	return (0);
 }

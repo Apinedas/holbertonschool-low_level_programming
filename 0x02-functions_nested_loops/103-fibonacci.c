@@ -12,7 +12,7 @@ int main(void)
 
 	num1 = 1;
 	num2 = 2;
-	sum = 0;
+	sum = 2;
 	fib = num1 + num2;
 	while (fib < 4000000)
 	{
