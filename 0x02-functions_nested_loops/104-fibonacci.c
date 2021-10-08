@@ -13,16 +13,16 @@ int main(void)
 
 	num1 = 1;
 	num2 = 2;
-	printf("%lu, %lu, ", num1, num2);
+	printf("%.0lf, %.0lf, ", num1, num2);
 	for (pos = 1; pos <= 96; pos++)
 	{
 		fib = num1 + num2;
 		num1 = num2;
 		num2 = fib;
 		if (pos != 96)
-			printf("%lu, ", fib);
+			printf("%.0lf, ", fib);
 		else
-			printf("%lu\n", fib);
+			printf("%.0lf\n", fib);
 	}
 	return (0);
 }
