@@ -9,7 +9,7 @@
 int main(void)
 {
 	int pos;
-	unsigned long num1, num2, fib;
+	double num1, num2, fib;
 
 	num1 = 1;
 	num2 = 2;
