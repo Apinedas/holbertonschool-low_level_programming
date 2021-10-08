@@ -6,7 +6,7 @@
  * Return: Always 0
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -16,7 +16,7 @@ void main(void)
 		{
 			printf("Fizz ");
 		}
-		else if (i % 3 != 0 && i % 5 == 0)
+		else if (i % 3 != 0 && i % 5 == 0 && i != 100)
 		{
 			printf("Buzz ");
 
@@ -25,10 +25,15 @@ void main(void)
 		{
 			printf("FizzBuzz ");
 		}
+		else if (i == 100)
+		{
+			printf("Buzz");
+		}
 		else
 		{
 			printf("%d ", i);
 		}
 	}
 	printf("\n");
+	return (0);
 }

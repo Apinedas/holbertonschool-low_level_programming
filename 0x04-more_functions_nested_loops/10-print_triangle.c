@@ -10,14 +10,15 @@ void print_triangle(int size)
 {
 	if (size > 0)
 	{
-		int lines, spaces;
+		int lines;
+		int spaces;
+		int i;
+		int j;
 
 		lines = 1;
 		while (lines <= size)
 		{
 			spaces = size - lines;
-			int i, j;
-
 			i = 1;
 			while (i <= spaces)
 			{
