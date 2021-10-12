@@ -33,7 +33,7 @@ void puts2(char *str)
 	int i;
 	int j;
 
-	i = _strlen(str);
+	i = _strlen(str) - 1;
 	j = 0;
 	while (j <= i)
 	{
