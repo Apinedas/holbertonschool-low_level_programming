@@ -27,11 +27,11 @@ void print_number(int n)
 	e = abs(n) % 10;
 	if (a > 0)
 		_putchar(a + '0');
-	if (b > 0)
+	if (b > 0 || a > 0)
 		_putchar(b + '0');
-	if (c > 0)
+	if (c > 0 || b > 0 || a > 0)
 		_putchar(c + '0');
-	if (d > 0)
+	if (d > 0 || c > 0 || b > 0 || a >0)
 		_putchar(d + '0');
 	_putchar(e + '0');
 }
