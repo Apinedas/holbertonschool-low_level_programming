@@ -4,3 +4,4 @@ README file for 0x0A</br>
 2-args.c - prints all arguments it receives.</br>
 3-mul.c - multiplies two numbers.</br>
 4-add.c - adds positive numbers.</br>
+100-change.c - prints the minimum number of coins to make change for an amount of money.
