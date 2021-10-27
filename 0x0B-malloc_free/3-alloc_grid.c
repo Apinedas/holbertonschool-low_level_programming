@@ -24,6 +24,7 @@ int **alloc_grid(int width, int height)
 		for (j = 0; j < width; j++)
 			ret[i][j] = 0;
 	}
+	ret = (int **)ret[0];
 	return (ret);
 
 }
