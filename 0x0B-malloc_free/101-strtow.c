@@ -28,7 +28,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0' || str[0] != ' ')
 		{
 			for (j = i + 1; str[j] != ' '; j++)
 				wlen += 1;
