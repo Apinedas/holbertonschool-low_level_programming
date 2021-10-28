@@ -1,0 +1,43 @@
+#include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
+
+/**
+ * argstostr - concatenates all the arguments of the program.
+ * @ac: Argument counter
+ * @av: Argument vector
+ * Return: Pointer to concatenated string
+ */
+
+char *argstostr(int ac, char **av)
+{
+	int i;
+	int j;
+	int k;
+	int len;
+	char *ret;
+
+	len = 0;
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	for (i = 1; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+			len += 1;
+	}
+	ret = (char *)malloc((len + ac - 1) * sizeof(char));
+	if (ret == NULL)
+		return (NULL);
+	for (k = 0; k < (len + ac - 1);)
+	{
+		for (i = 1; i < ac; i++)
+		{
+			for (j = 0; av[i][j] != '\0'; j++)
+				ret[k + j] = av[i][j];
+			k += j;
+			ret[k] = '\n';
+			k += 1;
+		}
+	}
+	return (ret);
+}
