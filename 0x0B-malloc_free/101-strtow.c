@@ -14,7 +14,9 @@ char **strtow(char *str)
 	char **ret;
 
 	words = wlen = l = 0;
-	if (str[0] == '\0' || str == NULL || str == " ")
+	if (str[0] != ' ')
+		words = 1;
+	if (str[0] == '\0' || str == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
