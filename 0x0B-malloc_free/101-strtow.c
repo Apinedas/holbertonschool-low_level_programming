@@ -18,34 +18,32 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			words += 1;
 	}
 	ret = (char **)malloc((words + 1) * sizeof(char *));
-	if (ret == NULL)
+	if (ret == NULL || words == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if (str[i] != ' ')
 		{
-			for (j = i + 1; str[j] != ' '; j++)
+			for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
 				wlen += 1;
 			ret[l] = (char *)malloc((wlen + 1) * sizeof(char));
 			if (ret[l] == NULL)
 			{
-				while (l >= 0)
-				{
+				for (; l >= 0; l--)
 					free(ret[l]);
-					l--;
-				}
 				free(ret);
 				return (NULL);
 			}
-			for (j = i + 1, k = 0; str[j] != ' '; j++, k++)
+			for (j = i, k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
 				ret[l][k] = str[j];
 			ret[l][k] = '\0';
 			wlen = 0;
 			l++;
+			i = j - 1;
 		}
 	}
 	ret[l] = NULL;
