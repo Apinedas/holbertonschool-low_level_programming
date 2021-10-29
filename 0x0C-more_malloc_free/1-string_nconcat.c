@@ -19,12 +19,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len1 = len2 = 0;
 	if (s1 == NULL)
 	{
-		s1 = malloc(1);
+		s1 = malloc(sizeof(char));
 		*s1 = '\0';
 	}
 	if (s2 == NULL)
 	{
-		s2 = malloc(1);
+		s2 = malloc(sizeof(char));
 		s2 = '\0';
 	}
 	for (i = 0; s1[i] != '\0'; i++)
