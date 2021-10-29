@@ -37,7 +37,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else
 	{
-		ptr = malloc(new_size);
+		aux = malloc(new_size);
+		aux = ptr;
+		free(ptr);
+		ptr = aux;
+		free(aux);
 		return (ptr);
 	}
 }
