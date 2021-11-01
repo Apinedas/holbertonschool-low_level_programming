@@ -1,0 +1,6 @@
+README file for 0x0D-Preprocessor</br>
+0-object_like_macro.h - header file that defines a macro named SIZE as an abbreviation for the token 1024.</br>
+1-pi.h - header file that defines a macro named PI as an abbreviation for the token 3.14159265359.</br>
+2-main.c - prints the name of the file it was compiled from, followed by a new line.</br>
+3-function_like_macro.h - function-like macro ABS(x) that computes the absolute value of a number x.</br>
+4-sum.h - function-like macro SUM(x, y) that computes the sum of the numbers x and y.</br>
