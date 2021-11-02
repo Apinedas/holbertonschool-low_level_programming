@@ -34,10 +34,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (name_len = 0; name[name_len] != '\0'; name_len++)
 		stored_name[name_len] = name[name_len];
-	stored_name[name_len] = '\0';
 	for (owner_len = 0; owner[owner_len] != '\0'; owner_len++)
 		stored_owner[owner_len] = owner[owner_len];
-	stored_owner[owner_len] = '\0';
 	ndog->name =  stored_name;
 	ndog->age = age;
 	ndog->owner = stored_owner;
