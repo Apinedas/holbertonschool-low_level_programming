@@ -1,6 +1,5 @@
-#ifndef CALC_H
-#define CALC_H
-#include <stddef.h>
+#ifndef _CALC_H
+#define _CALC_H
 #include <stdio.h>
 #include <stdlib.h>
 int op_add(int a, int b);
