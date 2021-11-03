@@ -1,6 +1,3 @@
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
 
 /**
@@ -17,7 +14,7 @@ int main(int argc, char *argv[])
 	int ret;
 	int (*op)(int, int);
 
-	if (argc > 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
