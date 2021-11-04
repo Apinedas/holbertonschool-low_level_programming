@@ -16,10 +16,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list ap;
 
 	if (separator == NULL)
-	{
-		separator = (char *)malloc(sizeof(char));
 		separator = "\0";
-	}
 	va_start(ap, n);
 	for (i = 0; i < (n - 1); i++)
 	{
