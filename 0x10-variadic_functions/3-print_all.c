@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stddef.h>
 
 
@@ -40,7 +39,8 @@ void print_all(const char * const format, ...)
 					printf("%s%s", sep, s);
 					break;
 				default:
-					break;
+					i++;
+					continue;
 			}
 			sep = ", ";
 			i++;
