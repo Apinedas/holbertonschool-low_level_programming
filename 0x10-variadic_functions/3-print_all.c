@@ -4,54 +4,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-/**
- * _strlen - returns the length of a string.
- * @s: Pointer to string to measure
- * Return: Lenght of the string
- */
-
-unsigned int _strlen(const char * const s)
-{
-	int i;
-	int len;
-
-	i = 0;
-	len = 0;
-	while (*(s + i) != '\0')
-	{
-		len = len + 1;
-		i++;
-	}
-	return (len);
-}
-
-/**
- * _strchr - locates a character in a string.
- * @s: String to search in
- * @c: Character to search
- * Return: Pointer to first occurrence of c in s, or NULL if character
- * is not found
- */
-
-char *_strchr(char *s, char c)
-{
-	int i;
-	char *ret;
-
-	ret = NULL;
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] == c)
-		{
-			ret = &s[i];
-			break;
-		}
-	}
-	if (c == '\0' && s[i] == '\0')
-		return (&s[i]);
-	else
-		return (ret);
-}
 
 /**
  * print_all - prints anything.
@@ -60,43 +12,41 @@ char *_strchr(char *s, char c)
 
 void print_all(const char * const format, ...)
 {
-	char *types = "cifs";
-	unsigned int i = 0, fmt_len = _strlen(format);
+	unsigned int i = 0;
 	va_list ap;
-	char *check, *s;
+	char *s, *sep;
 
 	va_start(ap, format);
-	while (i < fmt_len)
+	sep = "";
+	if (format)
 	{
-		check = _strchr(types, format[i]);
-		while (check != NULL)
+		while (format[i])
 		{
-			switch (check[0])
+			switch (format[i])
 			{
 				case 'c':
-					printf("%c", va_arg(ap, int));
+					printf("%s%c", sep, va_arg(ap, int));
 					break;
 				case 'i':
-					printf("%i", va_arg(ap, int));
+					printf("%s%i", sep, va_arg(ap, int));
 					break;
 				case 'f':
-					printf("%f", va_arg(ap, double));
+					printf("%s%f", sep, va_arg(ap, double));
 					break;
 				case 's':
 					s = va_arg(ap, char *);
 					if (s != NULL)
-						printf("%s", s);
+						printf("%s%s", sep, s);
 					else
-						printf("(nil)");
+						printf("%s(nil)", sep);
+					break;
+				default:
 					break;
 			}
-			if (i == (fmt_len - 1))
-				printf("\n");
-			else
-				printf(", ");
-			break;
+			sep = ", ";
+			i++;
 		}
-		i++;
 	}
+	printf("\n");
 	va_end(ap);
 }
