@@ -16,7 +16,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (copy == NULL)
 		return (NULL);
 	aux = *head;
-	while(aux && aux->next)
+	while (aux && aux->next)
 		aux = aux->next;
 	ret = (list_t *)malloc(sizeof(list_t));
 	if (ret == NULL)
