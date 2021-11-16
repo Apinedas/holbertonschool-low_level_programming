@@ -1,0 +1,21 @@
+#include "lists.h"
+
+/**
+ * listint_len - Counts number of nodes of a list_int list.
+ * @h: head of listint_t list
+ * Return: Number of nodes
+ */
+
+size_t listint_len(const listint_t *h)
+{
+	unsigned int nodes;
+
+	nodes = 0;
+	while (h->next != NULL)
+	{
+		nodes += 1;
+		h = h->next;
+	}
+	nodes += 1;
+	return (nodes);
+}
