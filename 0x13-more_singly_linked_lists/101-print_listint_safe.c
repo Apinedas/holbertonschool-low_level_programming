@@ -41,7 +41,7 @@ size_t print_listint_safe(const listint_t *head)
 		distance = distance_nodes(head, aux);
 		if (position > distance)
 		{
-			printf("-> [%p] %d\n",(void *)aux, aux->n);
+			printf("-> [%p] %d\n", (void *)aux, aux->n);
 			return (position);
 		}
 		printf("[%p] %d\n", (void *)aux, aux->n);
@@ -51,7 +51,8 @@ size_t print_listint_safe(const listint_t *head)
 	if (aux)
 	{
 		printf("[%p] %d\n", (void *)aux, aux->n);
-		return(position);
+		position += 1;
+		return (position);
 	}
-	exit(98);
+	return (position);
 }
