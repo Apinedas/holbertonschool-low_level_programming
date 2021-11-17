@@ -57,7 +57,7 @@ size_t free_listint_safe(listint_t **head)
 	while (aux && aux->next)
 	{
 		distance = distance_nodes2(*head, aux->next);
-		if (position > distance)
+		if (position > distance || aux == aux->next)
 		{
 			aux->next = NULL;
 			break;
