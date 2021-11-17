@@ -34,6 +34,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 unsigned int distance_nodes(const listint_t *n1, const listint_t *n2);
 size_t print_listint_safe(const listint_t *head);
+unsigned int distance_nodes2(listint_t *n1, listint_t *n2);
+size_t free_listint_safe(listint_t **head);
 
 
 #endif
