@@ -39,10 +39,10 @@ int copy_file(const char *file_from, const char *file_to)
 			return (-2);
 		}
 	}
-	buff = (char *)malloc((sizeof(char) * 4096) + 1);
+	buff = (char *)malloc((sizeof(char) * 8192) + 1);
 	if (buff == NULL)
 		return (0);
-	lenfrom = read(fd1, buff, 4096);
+	lenfrom = read(fd1, buff, 8192);
 	if (lenfrom == -1)
 	{
 		closeandfree(fd1, fd2, buff);
