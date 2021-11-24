@@ -26,6 +26,7 @@ int copy_file(const char *file_from, const char *file_to)
 	int fd1, fd2, lenfrom, lento, aux;
 	char *buff;
 
+	lenfrom = 1;
 	fd1 = open(file_from, O_RDWR);
 	if (fd1 == -1)
 		return (-1);
@@ -39,21 +40,23 @@ int copy_file(const char *file_from, const char *file_to)
 			return (-2);
 		}
 	}
-	buff = (char *)malloc((sizeof(char) * 10240) + 1);
+	buff = (char *)malloc((sizeof(char) * 1024) + 1);
 	if (buff == NULL)
 		return (0);
-	lenfrom = read(fd1, buff, 10240);
-	if (lenfrom == -1)
+	while (lenfrom > 0)
 	{
-		closeandfree(fd1, fd2, buff);
-		return (-1);
-	}
-	buff[lenfrom] = '\0';
-	lento = write(fd2, buff, lenfrom);
-	if (lento == -1)
-	{
-		closeandfree(fd1, fd2, buff);
-		return (-2);
+		lenfrom = read(fd1, buff, 1024);
+		if (lenfrom == -1)
+		{
+			closeandfree(fd1, fd2, buff);
+			return (-1);
+		}
+		lento = write(fd2, buff, lenfrom);
+		if (lento == -1)
+		{
+			closeandfree(fd1, fd2, buff);
+			return (-2);
+		}
 	}
 	aux = close(fd1);
 	if (aux == -1)
