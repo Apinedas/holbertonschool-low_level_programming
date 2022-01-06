@@ -10,4 +10,4 @@ Hi! On this folder you'll find some basic exercises on doubly linked list struct
 `5-get_dnodeint.c` - returns the nth node of a dlistint_t linked list.
 `6-sum_dlistint.c` - returns the sum of all the data (n) of a dlistint_t linked list.
 `7-insert_dnodeint.c` - inserts a new node at a given position.
-`8-delete_dnodeint.c` - deletes the node at index index of a dlistint_t linked list.
+`8-delete_dnodeint.c` - deletes the node at index of a dlistint_t linked list.
