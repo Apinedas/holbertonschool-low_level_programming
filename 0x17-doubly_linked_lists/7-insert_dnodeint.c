@@ -5,7 +5,7 @@
  * @h: Pointer to pointer of list's head
  * @idx: Index to insert new node
  * @n: int to insert
- * Return:
+ * Return: the address of the new node, or NULL if it failed
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -18,6 +18,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	new->n = n;
 	curr = *h;
+	if (!curr && idx == 0)
+	{
+		*h = new;
+		new->prev = NULL;
+		new->next = NULL;
+		return (new);
+	}
 	while (curr)
 	{
 		if (actual_idx == idx)
@@ -33,5 +40,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			actual_idx++;
 		}
 	}
+	free(new);
 	return (NULL);
 }
