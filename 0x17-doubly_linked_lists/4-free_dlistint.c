@@ -15,5 +15,4 @@ void free_dlistint(dlistint_t *head)
 		free(head);
 		head = curr;
 	}
-	return (0);
 }
