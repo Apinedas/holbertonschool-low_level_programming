@@ -1,0 +1,2 @@
+# Dynamic Libraries
+Hi! This folder will be a little bit simplier that the other ones in the repo. On this folder you'll find a `Dynamic library` with the functions that can be found on the holberton.h file. You'll also find a bash script to generate a dynamic library called `liball.so` with all c files in the current directory.
