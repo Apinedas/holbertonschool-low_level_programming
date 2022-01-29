@@ -16,9 +16,10 @@ hash_node_t *add_node(hash_node_t **head, char *key, const char *value)
 	actual_node = *head;
 	while (actual_node)
 	{
-		if (actual_node && strcmp((actual_node->key), key) == 0)
+		if (actual_node->key && strcmp((actual_node->key), key) == 0)
 		{
-			free(actual_node->value);
+			if (actual_node->value)
+				free(actual_node->value);
 			(actual_node->value) = strdup(value);
 			return (actual_node);
 		}
@@ -63,7 +64,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key && *key)
 	{
 		idx = key_index((const unsigned char *)key, ht->size);
-		added = add_node(&(ht->array)[idx], (char *)key, value);
+		added = add_node(&((ht->array)[idx]), (char *)key, value);
 		if (!added)
 			return (0);
 		return (1);
