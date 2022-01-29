@@ -26,9 +26,6 @@ void hash_table_print(const hash_table_t *ht)
 			}
 			idx++;
 		}
-		if (printed >= 1)
-			printf("\b\b}\n");
-		else
-			printf("}\n");
+		printf("}\n");
 	}
 }
