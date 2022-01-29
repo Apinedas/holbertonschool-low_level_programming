@@ -20,8 +20,7 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				printf("'%s': '%s'", actual_node->key, actual_node->value);
 				printed++;
-				if (actual_node->next || idx < (ht->size - 1))
-					printf(", ");
+				printf(", ");
 				actual_node = actual_node->next;
 			}
 			idx++;
