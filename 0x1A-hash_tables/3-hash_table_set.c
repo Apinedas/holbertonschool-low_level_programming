@@ -61,7 +61,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx;
 	hash_node_t *added;
 
-	if (key && *key)
+	if (ht && key && *key)
 	{
 		idx = key_index((const unsigned char *)key, ht->size);
 		added = add_node(&((ht->array)[idx]), (char *)key, value);
