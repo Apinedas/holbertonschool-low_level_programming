@@ -3,14 +3,17 @@
     Module to calc the perimeter of an island
 """
 
+
 def island_perimeter(grid):
     """
         Calcs the perimeter of the island represented by grid
     """
+    if not grid or not grid[0]:
+        return (0)
     height = len(grid)
     if height > 0:
         width = len(grid[0])
-    
+
     if height == 0 or width == 0:
         return (0)
 
@@ -22,11 +25,11 @@ def island_perimeter(grid):
                 perimeter += 4
                 if grid[i + 1][j] == 1:
                     perimeter -= 1
-                if grid[i - 1][j] == 1:
+                if i >= 1 and grid[i - 1][j] == 1:
                     perimeter -= 1
                 if grid[i][j + 1] == 1:
                     perimeter -= 1
-                if grid[i][j - 1] == 1:
+                if i >= 1 and grid[i][j - 1] == 1:
                     perimeter -= 1
             j += 1
         j = 0
