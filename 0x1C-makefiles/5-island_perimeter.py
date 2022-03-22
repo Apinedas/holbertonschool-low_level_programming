@@ -23,13 +23,13 @@ def island_perimeter(grid):
         while (j < width):
             if grid[i][j] == 1:
                 perimeter += 4
-                if grid[i + 1][j] == 1:
+                if i < (height - 1) and grid[i + 1][j] == 1:
                     perimeter -= 1
                 if i >= 1 and grid[i - 1][j] == 1:
                     perimeter -= 1
-                if grid[i][j + 1] == 1:
+                if j < (width - 1) and grid[i][j + 1] == 1:
                     perimeter -= 1
-                if i >= 1 and grid[i][j - 1] == 1:
+                if j >= 1 and grid[i][j - 1] == 1:
                     perimeter -= 1
             j += 1
         j = 0
